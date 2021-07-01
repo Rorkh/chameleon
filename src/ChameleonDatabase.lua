@@ -28,7 +28,7 @@ function database:new(filename)
 	end
 
 	function obj:vacuum()
-		self.database:instance():exec("VACUUM")
+		self._instance:exec("VACUUM")
         end
 
 	setmetatable(obj, self)

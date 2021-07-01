@@ -22,14 +22,15 @@ function model:instance(database, name, struct)
 
 	function obj:get(struct)
 		local database = self.database:instance()
-		local data
+		local data = {}
+
 		for row in database:nrows(querygen.select(self.name, struct)) do
-			if not data then data = row end
+			table.insert(data, object:new(obj.struct, row, self.name, self.database))
 		end
 
-		if not data then return false end
+		if next(data) == nil then return false end
 
-		return object:new(obj.struct, data, self.name, self.database)
+		return #data == 1 and data[1] or data
 	end
 	
 	setmetatable(obj, self)
