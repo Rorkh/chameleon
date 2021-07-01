@@ -1,5 +1,5 @@
 package = "chameleon"
-version = "1.0.0-1"
+version = "1.0.1-0"
 source = {
 	url = "git+https://github.com/Rorkh/chameleon"
 }

@@ -6,7 +6,10 @@ function querygen.new_table(name, struct)
 	local sql = f("CREATE TABLE IF NOT EXISTS %s (", name)
 
 	for k, field in ipairs(struct) do
-		sql = sql .. f("%s %s", field[2], field[1]) .. (k == #struct and "" or  ", ") 
+		local options = field[3] and table.concat(field[3], "") or ""
+		local ending = k == #struct and "" or ", "
+
+		sql = sql .. f("%s %s %s", field[2], field[1], options) .. ending
 	end
 
 	return sql .. ")"

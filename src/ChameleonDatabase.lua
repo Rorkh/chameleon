@@ -4,10 +4,14 @@ local model = require("database.model")
 local sqlite = require("lsqlite3complete")
 local querygen = require("database.querygen")
 
+local fields = require("database.fields")
+local flags = require("database.flags")
+
 function database:new(filename)
 	local obj = {}
 		self.models = {}
-		obj.field = require("database.fields")
+		obj.field = fields
+		obj.flags = flags
 		obj._instance = sqlite.open(filename)
 	
 	function obj:instance()
