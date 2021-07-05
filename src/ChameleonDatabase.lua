@@ -1,11 +1,11 @@
 local database = {}
 
-local model = require("database.model")
+local model = require("chameleon.model")
 local sqlite = require("lsqlite3complete")
-local querygen = require("database.querygen")
+local querygen = require("chameleon.querygen")
 
-local fields = require("database.fields")
-local flags = require("database.flags")
+local fields = require("chameleon.fields")
+local flags = require("chameleon.flags")
 
 function database:new(filename)
 	local obj = {}

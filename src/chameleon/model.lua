@@ -1,7 +1,7 @@
 local model = {}
 
-local object = require("database.object")
-local querygen = require("database.querygen")
+local object = require("chameleon.object")
+local querygen = require("chameleon.querygen")
 local sqlite = require("lsqlite3complete")
 
 function model:instance(database, name, struct)
