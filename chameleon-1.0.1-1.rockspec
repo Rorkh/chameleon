@@ -14,6 +14,12 @@ dependencies = {
 build = {
 	type = "builtin",
 	modules = {
-		chameleon = "src/ChameleonDatabase.lua"
+		chameleon = "src/ChameleonDatabase.lua",
+
+		["chameleon.fields"] = "src/chameleon/fields.lua",
+		["chameleon.flags"] = "src/chameleon/flags.lua",
+		["chameleon.model"] = "src/chameleon/model.lua",
+		["chameleon.object"] = "src/chameleon/object.lua",
+		["chameleon.querygen"] = "src/chameleon/querygen.lua",
 	}
 }
