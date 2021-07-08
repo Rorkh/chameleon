@@ -24,7 +24,7 @@ function querygen.delete(name, uid)
 end
 
 function querygen.select(name, struct)
-	local sql = f("SELECT * FROM %s WHERE ", name)
+	local sql = f("SELECT * FROM %s", name) .. ((next(struct) ~= nil) and " WHERE " or "")
 	
 	local i = 0
 	for key, value in pairs(struct) do
